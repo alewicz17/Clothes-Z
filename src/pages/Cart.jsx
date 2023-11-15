@@ -14,7 +14,7 @@ const Cart = () => {
     if(cartProducts.reduce((sum,product)=> sum + product.quantity, 0)==0){
       setpopupOpen((prev)=>!prev)
     }else{
-    await fetch("http://localhost:4000/",{
+    await fetch("https://clothes-z.onrender.com/",{
       method: "POST",
       headers:{
         'Content-Type': 'application/json'

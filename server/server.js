@@ -5,7 +5,7 @@ const app= express()
 app.use(cors())
 app.use(express.static("public"))
 app.use(express.json())
-app.post("/checkout", async(req,res)=>{
+app.post("/", async(req,res)=>{
     const products= req.body.products
     let lineItems=[]
     products.forEach((item) => {
@@ -35,5 +35,5 @@ app.post("/checkout", async(req,res)=>{
     res.send(JSON.stringify({
         url: session.url
     }))
-})  
+})
 app.listen(4000)

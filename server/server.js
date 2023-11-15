@@ -5,6 +5,9 @@ const app= express()
 app.use(cors())
 app.use(express.static("public"))
 app.use(express.json())
+app.get("/", (req, res) => {
+    res.send({ message: "Hello World!" });
+});
 app.post("/", async(req,res)=>{
     const products= req.body.products
     let lineItems=[]
